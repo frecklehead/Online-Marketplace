@@ -2,8 +2,10 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth import logout
 
+
 from item.models import Category,Item
 from .forms import SignupForm
+from django.contrib import messages
 # Create your views here.
 def index(request):#information about browser :reuqest
   items=Item.objects.filter(is_sold=False)[0:6]
@@ -25,4 +27,7 @@ def signup(request):
   return render(request,'core/signup.html',{
     'form':form
   })
-
+def logout_user(request):
+    logout(request)
+    messages.success(request, "You were logged out.")
+    return redirect('core:index')

@@ -22,11 +22,8 @@
 {%else%} 
 
   <a href="{% url 'core:signup' %}" class=" px-6 py-3 text-lg font-semibold bg-sky-500 text-white rounded-xl hover:bg-sky-700">Sign in</a>
-  <form action="{% url 'core:logout' %}" method="post">
-    {% csrf_token %}
-    <button type="submit">Logout</button>
-</form>
-  <!-- <a href="{% url 'core:login' %}" class="px-6 py-3 text-lg font-semibold bg-lime-500 text-white rounded-xl hover:bg-lime-700">Log In</a> -->
+  
+  <a href="{% url 'core:login' %}" class="px-6 py-3 text-lg font-semibold bg-lime-500 text-white rounded-xl hover:bg-lime-700">Log In</a>
 {%endif%}
 </div>
 </nav>
