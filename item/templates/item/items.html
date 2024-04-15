@@ -1,11 +1,32 @@
-{% extends 'core/base.html%}
+{% extends 'core/base.html' %}
 {%block title%}Products{%endblock%}
 {%block content%}
-<div class="pb-6 grid grid-cols-4 gap-4">
+<div class="pb-6 grid grid-cols-4 gap-4 bg-gray-100">
   <div class="'cols-span-1">
-    Sidebar
+   <form action="{%url 'item:items' %}" method="get">
+    <input name="query" class="'w-full py-4 border rounded-xl " tyype="text" value="{{query}}" placeholder="Find anything...">
+    <button class="mt-2 py-4 px-8 text-lg bg-lime-500 text-white rounded-xl">Search</button>
+   </form>
   </div>
-  <div class="col-span-3"></div>
+  <div class="col-span-3">
+    <div class="grid grid-cols-3 gap-3">
+      {% for item in items%} 
+      <div>
+        <a href="{% url 'item:detail' item.id %}">
+          <div>
+            <img src="{{item.image.url}} " >
+          </div>
+          <div class="p-6 bg-white ">
+            <h2 class="'text-2xl">
+              {{item.name}}
+            </h2>
+            <p class="text-gray-500">Price:{{item.price}}</p>
+          </div>
+        </a>
+      </div>
+      {%endfor%}
+    </div>
+  </div>
 </div>
 
 
