@@ -8,37 +8,16 @@
     {% endblock %}</title>
 </head>
 <body>
-  <!-- <nav class="py-5 px-5 flex justify-between items-center border-b border-gray-200">
+  <nav class="py-5 px-5 flex justify-between items-center border-b border-gray-200">
 <a href="/" class=" text-xl font-semibold ">HamroDokan</a>
 <div class="space-x-6">
-  <a href="#" class="text-lg font-semibold hover::text-gray-500">Browse</a>
+  <a href="{%url 'item:items' %}" class="text-lg font-semibold hover::text-gray-200">Browse</a>
 {%if request.user.is_authenticated%}
 <a href="{%url 'item:newitem' %}" class=" px-6 py-3 text-lg font-semibold bg-sky-500 text-white rounded-xl hover:bg-sky-700">Add Item</a>
 <a href="{%url 'dashboard:index'%}" class=" px-6 py-3 text-lg font-semibold bg-sky-500 text-white rounded-xl hover:bg-sky-700">Dashboard</a>
   <a href="#" class="px-6 py-3 text-lg font-semibold bg-lime-500 text-white rounded-xl hover:bg-lime-700">Inbox</a>
-  <a href="{% url 'core:logout'%}" class="px-6 py-3 text-lg font-semibold bg-lime-500 text-white rounded-xl hover:bg-lime-700">Logout</a>  -->
-  <nav class="flex flex-wrap items-center justify-between px-5 py-3 border-b border-gray-200">
-    <div class="flex items-center flex-shrink-0 mr-6">
-        <a href="/" class="text-xl font-semibold text-green-800">HamroDokan</a>
-    </div>
-    <div class="block lg:hidden">
-        <button id="nav-toggle" class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-gray-900">
-            <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
-        </button>
-    </div>
-    <div id="nav-content" class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0">
-        <div class="text-sm lg:flex-grow">
-            <a href="{%url 'item:items' %}" class="block mt-4 lg:inline-block lg:mt-0 text-lg font-semibold mr-4 hover:text-gray-500">Browse</a>
-            {% if request.user.is_authenticated %}
-                <a href="{% url 'item:newitem' %}" class="block mt-4 lg:inline-block lg:mt-0 text-lg font-semibold mr-4 bg-sky-500 text-white px-6 py-3 rounded-xl hover:bg-sky-700">Add Item</a>
-                <a href="{% url 'dashboard:index' %}" class="block mt-4 lg:inline-block lg:mt-0 text-lg font-semibold mr-4 bg-sky-500 text-white px-6 py-3 rounded-xl hover:bg-sky-700">Dashboard</a>
-                <a href="#" class="block mt-4 lg:inline-block lg:mt-0 text-lg font-semibold mr-4 bg-lime-500 text-white px-6 py-3 rounded-xl hover:bg-lime-700">Inbox</a>
-                <a href="{% url 'core:logout' %}" class="block mt-4 lg:inline-block lg:mt-0 text-lg font-semibold bg-lime-500 text-white px-6 py-3 rounded-xl hover:bg-lime-700">Logout</a>
-            {% endif %}
-        </div>
-    </div>
-</nav>
-
+  <a href="{% url 'core:logout'%}" class="px-6 py-3 text-lg font-semibold bg-lime-500 text-white rounded-xl hover:bg-lime-700">Logout</a> 
+  
   
 {%else%} 
 
