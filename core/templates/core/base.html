@@ -19,13 +19,14 @@
   <a href="{% url 'core:logout'%}" class="px-6 py-3 text-lg font-semibold bg-lime-500 text-white rounded-xl hover:bg-lime-700">Logout</a> 
   
   
-{%else%} 
+               {%else%} 
 
-  <a href="{% url 'core:signup' %}" class=" px-6 py-3 text-lg font-semibold bg-sky-500 text-white rounded-xl hover:bg-sky-700">Sign in</a>
+               <a href="{% url 'core:signup' %}" class=" px-6 py-3 text-lg font-semibold bg-sky-500 text-white rounded-xl hover:bg-sky-700">Sign in</a>
   
-  <a href="{% url 'core:login' %}" class="px-6 py-3 text-lg font-semibold bg-lime-500 text-white rounded-xl hover:bg-lime-700">Log In</a>
-{%endif%}
-</div>
+               <a href="{% url 'core:login' %}" class="px-6 py-3 text-lg font-semibold bg-lime-500 text-white rounded-xl hover:bg-lime-700">Log In</a>
+              {%endif%}
+      </div>
+   </div>
 </nav>
   <div class="px-6 py-6">
    {%block content%}
