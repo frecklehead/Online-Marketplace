@@ -39,3 +39,9 @@ def inbox(request):
   return render(request, 'chat/inbox.html',{
     'chats':chats
   })
+@login_required
+def detail(request,pk):
+  chat=Chat.objects.filter(members__in=[request.user.id]).get(pk=pk)
+  return render(request,'chat/chat.html',{
+    'chat':chat
+  })
