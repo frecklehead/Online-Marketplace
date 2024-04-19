@@ -15,7 +15,7 @@
 {%if request.user.is_authenticated%}
 <a href="{%url 'item:newitem' %}" class=" px-6 py-3 text-lg font-semibold bg-sky-500 text-white rounded-xl hover:bg-sky-700">Add Item</a>
 <a href="{%url 'dashboard:index'%}" class=" px-6 py-3 text-lg font-semibold bg-sky-500 text-white rounded-xl hover:bg-sky-700">Dashboard</a>
-  <a href="#" class="px-6 py-3 text-lg font-semibold bg-lime-500 text-white rounded-xl hover:bg-lime-700">Inbox</a>
+  <a href="{%url 'chat:inbox'%}" class="px-6 py-3 text-lg font-semibold bg-lime-500 text-white rounded-xl hover:bg-lime-700">Inbox</a>
   <a href="{% url 'core:logout'%}" class="px-6 py-3 text-lg font-semibold bg-lime-500 text-white rounded-xl hover:bg-lime-700">Logout</a> 
   
   
