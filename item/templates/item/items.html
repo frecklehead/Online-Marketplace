@@ -11,11 +11,18 @@
    <p class="font-semibold">Categories</p>
    <ul>
     {%for category in categories%}
-    {%if category_id == category_id%} 
-    <li class="py-2 px-2 rounded-xl bg-gray-200 {%endif%}">
-    <a href="{%url 'item:items' %}"?{{query}}&category={{category.id}}>{{category.name}}</a>
+   
+    <li class="py-2 px-2 rounded-xl hover:bg-gray-100 {% if category.id == category_id %}   bg-gray-200 {% endif %}">
+    <a href="{%url 'item:items' %}?query={{ query }}&category={{category.id}}">
+      {{category.name}}</a>
     </li>
     {%endfor%}
+   </ul>
+
+   <hr class="my-6">
+   <p class="font-semibold">Clear Filters</p>
+   <ul>
+    <li> <a href="{%url 'item:items' %}" class="mt-2 py-4 px-8 inline-block bg-yellow-500 text-lg rounded-xl  text-white">Clear</a></li>
    </ul>
   </div>
   <div class="col-span-3">
