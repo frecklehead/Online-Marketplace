@@ -5,7 +5,7 @@
 <h1 class="mb-6 text-3xl ">Chat</h1>
 <div classs="space-y-6">
   {% for message in chat.messages.all %}
-    <div class="p-6 flex {%if message.created_by == request.user %} bg-blue-100 {% endif %} bg-gray-100 rounded-xl">
+    <div class="p-6 flex {%if message.created_by == request.user %}bg-blue-100 {%else%} bg-gray-100 {% endif %} rounded-xl">
       <div>
         <p class="mb-4 "> <strong>
           {{message.created_by.username}}
@@ -16,4 +16,10 @@
     </div>
    {%endfor%}
 </div>
+
+<form method="post" action="." class="mt-6">
+  {% csrf_token%}
+  {{form.as_p}}
+  <button class=" py-4 px-8 text-lg bg-lime-500 hover:bg-lime-700 rounded-xl text-white ">Submit</button>
+</form>
 {%endblock%}
