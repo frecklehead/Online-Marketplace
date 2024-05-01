@@ -18,6 +18,7 @@ class NewItemForm(forms.ModelForm):
       'price':forms.TextInput(attrs={
         'class':CLASSES
       }),
+      'stock_quantity': forms.NumberInput(attrs={'class': CLASSES}),
       'image':forms.FileInput(attrs={
         'class':CLASSES
       })
